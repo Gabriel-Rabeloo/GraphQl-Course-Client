@@ -6,12 +6,12 @@ export const Footer = () => {
     <Styled.Container>
       <div>
         <a
-          href="https://www.udemy.com/user/luiz-otavio-miranda/"
+          href="https://github.com/Gabriel-Rabeloo/"
           rel="noopener noreferrer"
-          title="Conheça os cursos"
+          title="Github"
           target="_blank"
         >
-          <span>&lt;Dev&gt;</span>Otávio Miranda
+          <span>&lt;Dev&gt;</span>Gabriel Rabelo
           <span>&lt;/Dev&gt;</span>
         </a>
       </div>
