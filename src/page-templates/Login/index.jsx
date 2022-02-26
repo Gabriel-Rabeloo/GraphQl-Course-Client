@@ -11,7 +11,7 @@ export const Login = () => {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
 
-  const [login, { loading, error, data }] = useMutation(GQL_LOGIN, {
+  const [login, { loading, error }] = useMutation(GQL_LOGIN, {
     onError() {},
   });
 
@@ -29,8 +29,6 @@ export const Login = () => {
   if (loading) return <Loading loading={loading} />;
   // if (error) return <DefaultError error={error} />;
 
-  console.log(data);
-
   return (
     <>
       <Helmet title="Login - GraphQL + Apollo-Client - Gabriel Rabelo" />
@@ -41,6 +39,7 @@ export const Login = () => {
         setUserName={setUserName}
         setPassword={setPassword}
         formError={error?.message}
+        formData={{ password, userName }}
       />
     </>
   );
