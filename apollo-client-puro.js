@@ -9,20 +9,8 @@ const client = new ApolloClient({
 client
   .query({
     query: gql`
-      query GET_USERS(
-        $sort: String = "indexRef"
-        $order: ApiFiltersOrder = DESC
-        $start: Int = 0
-        $limit: Int = 10
-      ) {
-        users(
-          input: {
-            _sort: $sort
-            _order: $order
-            _start: $start
-            _limit: $limit
-          }
-        ) {
+      query GET_USERS($sort: String = "indexRef", $order: ApiFiltersOrder = DESC, $start: Int = 0, $limit: Int = 10) {
+        users(input: { _sort: $sort, _order: $order, _start: $start, _limit: $limit }) {
           ...user
         }
       }
