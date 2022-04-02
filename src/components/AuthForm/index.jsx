@@ -8,7 +8,7 @@ import P from 'prop-types';
 import { Loading } from 'components/Loading';
 import { DefaultContainer } from '../DefaultContainer';
 import { loginFormVar } from 'graphql/reactive-var/login-form';
-
+import { useAuthVar } from 'graphql/reactive-var/auth';
 const fakeCallback = (v) => v;
 
 export const AuthForm = ({
@@ -20,6 +20,12 @@ export const AuthForm = ({
   setPassword = fakeCallback,
   formDisabled = true,
 }) => {
+  const authVar = useAuthVar();
+
+  if (authVar.isLoggedIn) {
+    window.location.href = '/';
+  }
+
   return (
     <DefaultContainer>
       <Styled.HeadingStyles>Login {!!savedUserName && `(${savedUserName})`}</Styled.HeadingStyles>

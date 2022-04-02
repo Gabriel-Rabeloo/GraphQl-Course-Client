@@ -23,6 +23,8 @@ export const Login = () => {
         isLoggedIn: true,
       };
       authDataManager.setVar(authData);
+
+      window.location.href = '/';
     },
   });
 
@@ -48,7 +50,7 @@ export const Login = () => {
 
       <AuthForm
         handleLogin={handleLogin}
-        formDisabled={false}
+        formDisabled={loading}
         formError={error?.message}
         setUserName={setUserName}
         setPassword={setPassword}
